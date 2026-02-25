@@ -1,0 +1,14 @@
+[project]
+name = "poc-zenoh-fs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "eclipse-zenoh>=1.7.2",
+    "fsspec>=2026.2.0",
+    "fusepy>=3.0.1",
+    "loguru>=0.7.3",
+    "typer>=0.24.1",
+    "universal-pathlib>=0.3.10",
+]
