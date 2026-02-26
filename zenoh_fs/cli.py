@@ -53,7 +53,7 @@ class FileServer:
             path=path.removeprefix("/read")
         elif path.startswith("/write"):
             path=path.removeprefix("/write")
-        return path
+        return path if path else "/"
 
 
     def generate_ticket(self, file_path, method):
