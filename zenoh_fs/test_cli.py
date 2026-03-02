@@ -1,5 +1,5 @@
 import unittest
-from zenoh_fs.cli import FileServer
+from zenoh_fs.FileServer import FileServer
 
 class TestNormalizePath(unittest.TestCase):
     def setUp(self):
@@ -55,5 +55,11 @@ class TestNormalizePath(unittest.TestCase):
                     f"Failed for input: '{input_path}'. Expected '{expected}' but got '{result}'"
                 )
 
+import time
+
+
+ZENOH_PATH = "test/files"
+
+
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(buffer=False)
