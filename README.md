@@ -1,6 +1,12 @@
 A proof of concept demonstrating a filesystem exposed via zenoh and mounted
 via fuse.
 
+Current status: alpha, you can expose a read-only filesystem and mount it.
+
+`python -m zenoh_fs.cli expose ./`
+
+`python -m zenoh_fs.cli mount ${hostname}/files /tmp/foo`
+
 # Zenoh FS
 
 Zenoh FS exposes arbitrary filesystems (local, S3, etc.) as interactive Zenoh resources, utilizing a strictly separated topic structure comprising read/ and write/ subtrees. This separation was chosen to align directly with Zenoh's native Access Control List (ACL) model, allowing administrators to enforce centralized, policy-based security (e.g., permitting writes to a directory while strictly locking reads to specific files) without implementing custom authorization layers. By treating non-destructive methods like hashing as read operations and modifying methods like deletion as write operations via query parameters, the system ensures consistent permission mapping.

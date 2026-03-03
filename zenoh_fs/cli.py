@@ -14,7 +14,7 @@ it's a method on the read path, while delete is a method on the write path. This
 
 We also have a capability-based security system using "tickets" that allow you to pass your permission to read/write a file to another client, bypassing the ACLs for that specific file.
 This is specifically useful for copy operations, where you can tell the fileserver itself to copy a file from source to destination, without having to read the file into memory on the client side before writing it back to zenoh.
-This is much more bandwidth efficient.
+This is much more bandwidth efficient. This lives at hostname/files/ticket/(read,write)/path/to/file?ticket=1234 .
 """
 
 from loguru import logger
